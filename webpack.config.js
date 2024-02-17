@@ -1,5 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // CSSを別ファイルに出力するプラグイン
+const HtmlWebpackPlugin = require("html-webpack-plugin"); // HTMLを出力するプラグイン
 
 module.exports = {
 	// webpackが最初に見に行くファイル（エントリーポイント）
@@ -20,5 +21,12 @@ module.exports = {
 			},
 		],
 	},
-	plugins: [new MiniCssExtractPlugin()], // プラグインを追加
+	plugins: [
+		new MiniCssExtractPlugin(),
+		new HtmlWebpackPlugin({
+			inject: "body",
+			template: "./src/index.html",
+		}),
+	], // プラグインを追加
 };
+
