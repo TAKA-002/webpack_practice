@@ -1,4 +1,5 @@
 const path = require("path");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // CSSを別ファイルに出力するプラグイン
 
 module.exports = {
 	// webpackが最初に見に行くファイル（エントリーポイント）
@@ -12,8 +13,12 @@ module.exports = {
 		rules: [
 			{
 				test: /\.css/,
-				use: [{ loader: "style-loader" }, { loader: "css-loader" }],
+				use: [
+					{ loader: MiniCssExtractPlugin.loader }, // CSSを別ファイルに出力するローダーへstyle-loaderから変更
+					{ loader: "css-loader" },
+				],
 			},
 		],
 	},
+	plugins: [new MiniCssExtractPlugin()], // プラグインを追加
 };
