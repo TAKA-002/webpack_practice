@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
 	// webpackが最初に見に行くファイル（エントリーポイント）
-	entry: "./src/javascripts/index.js",
+	entry: "./src/javascripts/main.js",
 	output: {
 		// webpackでバンドルしたファイルを出力するディレクトリを指定（絶対パスではないといけない）
 		path: path.resolve(__dirname, "./dist"),
@@ -23,7 +23,7 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new MiniCssExtractPlugin({ filename: "./stylesheets/my.css" }),
+		new MiniCssExtractPlugin({ filename: "./stylesheets/main.css" }),
 		new HtmlWebpackPlugin({
 			inject: "body",
 			template: "./src/templates/index.html",
