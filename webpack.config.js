@@ -54,6 +54,14 @@ module.exports = {
 			template: "./src/templates/access.pug",
 			filename: "access.html",
 		}),
+		new HtmlWebpackPlugin({
+			inject: "body",
+			template: "./src/templates/members/taro.pug",
+			filename: "members/taro.html",
+		}),
 		new CleanWebpackPlugin(),
 	], // プラグインを追加
+	devServer: {
+		static: path.resolve(__dirname, "src"),
+	},
 };
