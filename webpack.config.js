@@ -47,6 +47,12 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			inject: "body",
 			template: "./src/templates/index.pug",
+			filename: "index.html",
+		}),
+		new HtmlWebpackPlugin({
+			inject: "body",
+			template: "./src/templates/access.pug",
+			filename: "access.html",
 		}),
 		new CleanWebpackPlugin(),
 	], // プラグインを追加
