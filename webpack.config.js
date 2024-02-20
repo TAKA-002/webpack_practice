@@ -33,13 +33,20 @@ module.exports = {
 					// },
 				],
 			},
+			{
+				test: /\.pug/,
+				use: [
+					{ loader: "html-loader" },
+					{ loader: "pug-html-loader", options: { pretty: true } },
+				],
+			},
 		],
 	},
 	plugins: [
 		new MiniCssExtractPlugin({ filename: "./stylesheets/main.css" }),
 		new HtmlWebpackPlugin({
 			inject: "body",
-			template: "./src/templates/index.html",
+			template: "./src/templates/index.pug",
 		}),
 		new CleanWebpackPlugin(),
 	], // プラグインを追加
