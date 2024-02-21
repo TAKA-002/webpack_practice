@@ -20,7 +20,9 @@ module.exports = {
 					{
 						loader: "babel-loader",
 						options: {
-							presets: ["@babel/preset-env"],
+							presets: [
+								["@babel/preset-env", { targets: "> 0.25%, not dead" }],
+							],
 						},
 					},
 				],
@@ -78,3 +80,4 @@ module.exports = {
 		static: path.resolve(__dirname, "src"),
 	},
 };
+
