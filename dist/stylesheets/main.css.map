@@ -1,0 +1,1 @@
+{"version":3,"file":"./stylesheets/main.css","mappings":";;;AAAA;EACC;ACCD,C","sources":["webpack://webpack-practice/./src/stylesheets/main.scss","webpack://webpack-practice/main.scss"],"sourcesContent":["body {\n\tcolor: red;\n}\n","body {\n  color: red;\n}"],"names":[],"sourceRoot":""}

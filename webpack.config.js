@@ -4,6 +4,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin"); // HTMLを出力する
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
+	mode: "development",
+	devtool: "source-map",
 	// webpackが最初に見に行くファイル（エントリーポイント）
 	entry: "./src/javascripts/main.js",
 	output: {
@@ -31,7 +33,7 @@ module.exports = {
 				test: /\.(css|sass|scss)/,
 				use: [
 					{ loader: MiniCssExtractPlugin.loader }, // CSSを別ファイルに出力するローダーへstyle-loaderから変更
-					{ loader: "css-loader" },
+					{ loader: "css-loader", options: { sourceMap: true } },
 					{ loader: "sass-loader" },
 				],
 			},
@@ -80,4 +82,3 @@ module.exports = {
 		static: path.resolve(__dirname, "src"),
 	},
 };
-
