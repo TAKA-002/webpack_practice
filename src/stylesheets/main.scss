@@ -1,3 +1,44 @@
+@use "./menu.scss";
+
+html,
+body,
+div,
+p,
+img,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	box-sizing: border-box;
+}
+
 body {
-	color: red;
+	color: lightblue;
+	padding: 0;
+	font-size: 16px;
+	font-family: "snas-serif";
+}
+
+h1 {
+	font-size: 2em;
+}
+
+.container {
+	width: 980px;
+	max-width: 100%;
+	margin: 0 auto;
+	padding: 0.5em;
+}
+.main-image {
+	background-image: url("../images/thumbnail.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	width: 100%;
+	height: 680px;
+	border-radius: 2em;
+	margin: 1em 0;
 }
