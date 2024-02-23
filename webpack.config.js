@@ -11,7 +11,7 @@ module.exports = {
 	output: {
 		// webpackでバンドルしたファイルを出力するディレクトリを指定（絶対パスではないといけない）
 		path: path.resolve(__dirname, "./dist"),
-		filename: "./javascripts/main.js",
+		filename: "./javascripts/[name]-[contenthash].js",
 	},
 	module: {
 		rules: [
@@ -47,7 +47,7 @@ module.exports = {
 				test: /\.(png|jpg|jpeg)/,
 				type: "asset/resource",
 				generator: {
-					filename: "images/[name][ext]",
+					filename: "images/[name]-[contenthash][ext]",
 				},
 				use: [
 					// {
@@ -75,7 +75,9 @@ module.exports = {
 		],
 	},
 	plugins: [
-		new MiniCssExtractPlugin({ filename: "./stylesheets/main.css" }),
+		new MiniCssExtractPlugin({
+			filename: "./stylesheets/[name]-[contenthash].css",
+		}),
 		new HtmlWebpackPlugin({
 			inject: "body",
 			template: "./src/templates/index.pug",
